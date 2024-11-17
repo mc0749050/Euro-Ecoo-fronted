@@ -15,7 +15,7 @@ const SendMessages = () => {
     } else {
       try {
         setloading(true);
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/sendEmailFromAdmin`, { htmlMessage });
+        const res = await axios.post(`https://euro-node-backend.onrender.com/sendEmailFromAdmin`, { htmlMessage });
 
         if (res.status === 201 && res.data.success) {
           setloading(false);

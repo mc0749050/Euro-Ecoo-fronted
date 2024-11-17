@@ -57,7 +57,7 @@ const Signup = () => {
       try {
         const { email } = userinpvalue;
 
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/check-user`, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/check-user`, {
           email,
         });
 
@@ -73,7 +73,7 @@ const Signup = () => {
           const generatedOtp = await otpGenreater();
           setotp(generatedOtp.toString());
           try {
-            const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/otp-email`, {
+            const res = await axios.post(`https://euro-node-backend.onrender.com/otp-email`, {
               otp: generatedOtp,
               email,
             });
@@ -107,7 +107,7 @@ const Signup = () => {
     } else {
       try {
         const { name, email, password, address } = userinpvalue;
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/register`, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/register`, {
           name,
           email,
           password,
@@ -142,7 +142,7 @@ const Signup = () => {
     setotp(generatedOtp.toString());
     try {
       const { email } = userinpvalue;
-      const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/otp-email`, {
+      const res = await axios.post(`https://euro-node-backend.onrender.com/otp-email`, {
         otp: generatedOtp,
         email,
       });

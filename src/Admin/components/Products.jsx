@@ -10,7 +10,7 @@ const Products = () => {
 
   const getProductsData = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_LIVE_URL}/getProductsData`);
+      const res = await axios.get(`https://euro-node-backend.onrender.com/getProductsData`);
 
       if (res && res.status === 201) {
         setProductData(res.data.productsData);
@@ -30,7 +30,7 @@ const Products = () => {
 
   const deleteProductFun = async (id) => {
     try {
-      const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/deleteProduct/${id}`);
+      const res = await axios.post(`https://euro-node-backend.onrender.com/deleteProduct/${id}`);
 
       if(res && res.status === 201){
         toast.success(res.data.message);

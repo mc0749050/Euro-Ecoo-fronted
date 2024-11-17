@@ -3,15 +3,15 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "./Loader";
 import { AuthContext } from "../context/authContext";
-
 const Products = () => {
   const [productData, setProductData] = useState();
   const [loading, setloading] = useState(true);
 
+
   const getProductsData = async () => {
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_LIVE_URL}/getProductsData`
+        `https://euro-node-backend.onrender.com/getProductsData`
       );
 
       if (res && res.status === 201) {
@@ -36,7 +36,7 @@ const Products = () => {
     const productid = id;
 
     try {
-      const res = await axios.post("/addToCart", { userid, productid });
+      const res = await axios.post("https://euro-node-backend.onrender.com/addToCart", { userid, productid });
 
       if (res && res.status === 201) {
         toast.success(res.data.message);
@@ -53,7 +53,7 @@ const Products = () => {
   const handlePayment = async (price) => {
     try {
       // Request to create a new order from the backend
-      const { data } = await axios.post("/create-order", { amount: price });
+      const { data } = await axios.post("https://euro-node-backend.onrender.com/create-order", { amount: price });
 
       const options = {
         key: "rzp_test_t1sDs7WL1eHN1V",

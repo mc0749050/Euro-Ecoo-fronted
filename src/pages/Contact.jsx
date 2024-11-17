@@ -55,7 +55,7 @@ export default function Contact() {
 
       try {
 
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/contect-submit`, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/contect-submit`, {
           name, email, phone, title, message
         })
 

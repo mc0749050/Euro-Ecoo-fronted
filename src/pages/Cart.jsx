@@ -14,7 +14,7 @@ const Cart = () => {
     const productids = id;
 
     try {
-      const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/removeToCart`, { userid, productids });
+      const res = await axios.post(`https://euro-node-backend.onrender.com/removeToCart`, { userid, productids });
 
       if (res && res.status === 201) {
         toast.success(res.data.message);
@@ -42,7 +42,7 @@ const Cart = () => {
   const handlePayment = async (ids, price) => {
     try {
       // Request to create a new order from the backend
-      const { data } = await axios.post(`${process.env.REACT_APP_LIVE_URL}/create-order`, { amount: price });
+      const { data } = await axios.post(`https://euro-node-backend.onrender.com/create-order`, { amount: price });
   
       const options = {
         key: "rzp_test_t1sDs7WL1eHN1V",

@@ -18,7 +18,7 @@ const AuthProvider = ({children}) => {
             
         if (auth && auth.user && auth.user.email) {  // Check if auth exists
             try {
-                const res = await axios.get(`${process.env.REACT_APP_LIVE_URL}/get-user-data?email=${auth.user.email}`);
+                const res = await axios.get(`https://euro-node-backend.onrender.com/get-user-data?email=${auth.user.email}`);
                 if (res && res.data) {
                     setuserdata(res.data.userdata);
                     setloading(false)

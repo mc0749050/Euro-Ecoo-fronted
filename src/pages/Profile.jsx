@@ -43,7 +43,7 @@ const Profile = () => {
       toast.error("Please enter name !");
     } else {
       try {
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/change-name`, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/change-name`, {
           name,
           email: auth.user.email,
         });
@@ -77,7 +77,7 @@ const Profile = () => {
       toast.error('Enter valid Phone no. !')
     } else {
       try {
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/change-phone`, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/change-phone`, {
           phone,
           email: auth.user.email,
         });
@@ -128,7 +128,7 @@ const Profile = () => {
     else {
       try {
         const { street, city, state, country, zipcode } = address;
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/change-address`, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/change-address`, {
           street,
           city,
           state,

@@ -44,7 +44,7 @@ const AddItem = () => {
         formData.append("instock", products.instock);
         products.images.forEach((file) => formData.append("images", file)); // Append each image
 
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/addProducts`, formData, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/addProducts`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
 

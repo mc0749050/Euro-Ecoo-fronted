@@ -44,7 +44,7 @@ const Login = () => {
     } else {
       try {
         const { email, password } = userinpvalue;
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/login`, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/login`, {
           email,
           password,
         });
@@ -99,7 +99,7 @@ const Login = () => {
         setreotp(generatedOtp);
 
         const res = await axios.post(
-          `${process.env.REACT_APP_LIVE_URL}/check-email-send-otp`,
+          `https://euro-node-backend.onrender.com/check-email-send-otp`,
           {
             reemail,
             reotp: generatedOtp,
@@ -152,7 +152,7 @@ const Login = () => {
       toast.error("both password must be same !");
     } else {
       try {
-        const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/reset-pass`, {
+        const res = await axios.post(`https://euro-node-backend.onrender.com/reset-pass`, {
           userotp,
           newpass,
           reotp,
@@ -186,7 +186,7 @@ const Login = () => {
       setreotp(generatedOtp);
 
       const res = await axios.post(
-        `${process.env.REACT_APP_LIVE_URL}/check-email-send-otp`,
+        `https://euro-node-backend.onrender.com/check-email-send-otp`,
         {
           reemail,
           reotp: generatedOtp,

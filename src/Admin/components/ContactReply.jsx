@@ -15,7 +15,7 @@ const ContactReply = () => {
     const navigate = useNavigate();
     const fetchUserData = async () => {
         try {
-          const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/getuserformdata`, {id});
+          const res = await axios.post(`https://euro-node-backend.onrender.com/getuserformdata`, {id});
           if (res && res.data) {
             setformuser(res.data.userformdata);
           }
@@ -39,7 +39,7 @@ const ContactReply = () => {
         } else {
             try {
               setloading(true);
-                const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/sendReplyContactform`, {email:formuser.email, sendmessage})
+                const res = await axios.post(`https://euro-node-backend.onrender.com/sendReplyContactform`, {email:formuser.email, sendmessage})
 
                 if(res.status === 201) {
                   setloading(false);

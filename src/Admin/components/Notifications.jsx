@@ -14,7 +14,7 @@ const Notifications = () => {
   }
   const fetchFormData = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_LIVE_URL}/contectNotifications`);
+      const res = await axios.get(`https://euro-node-backend.onrender.com/contectNotifications`);
       if (res && res.data) {
         setformData(res.data.contactForms);
 
@@ -33,7 +33,7 @@ const Notifications = () => {
 
       const deleteForm = async (email) => {
         try {
-          const res = await axios.post(`${process.env.REACT_APP_LIVE_URL}/delete-contactform`, {email});
+          const res = await axios.post(`https://euro-node-backend.onrender.com/delete-contactform`, {email});
     
           if(res.status === 201 && res.data.success){
             toast.success(res.data.message)
